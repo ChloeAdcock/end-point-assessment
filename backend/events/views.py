@@ -17,4 +17,4 @@ class EventListview(generics.ListAPIView):
     permission_classes = [
         permissions.IsAuthenticated,
     ]
-    queryset = Event.objects.filter(date_time > timezone.now())
+    queryset = Event.objects.filter(date_time__gte = timezone.now())
