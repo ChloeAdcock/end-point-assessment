@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
+import Link from "@material-ui/core/Link";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login, closeAlert } from "../../redux/actions/accounts/accounts";
@@ -25,8 +26,8 @@ function Login() {
   };
 
   const handleClose = () => {
-      dispatch(closeAlert());
-  }
+    dispatch(closeAlert());
+  };
 
   if (!errorState && user) {
     return <Redirect to="/map" />;
@@ -54,6 +55,11 @@ function Login() {
             required
           />
           <Button type="submit">Submit</Button>
+          <Typography>
+            <Link href="/register" onClick={e => e.preventDefault}>
+              Don't have an account? Register here
+            </Link>
+          </Typography>
         </form>
       </div>
     );
