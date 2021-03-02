@@ -29,3 +29,4 @@ class UnauthorisedGetUserTestCase(APITestCase):
     def test_unauthenticated_request_returns_401(self):
         response = self.client.get(self.url)
         self.assertEquals(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        
