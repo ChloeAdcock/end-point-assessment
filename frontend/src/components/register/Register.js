@@ -6,6 +6,7 @@ import Alert from "@material-ui/lab/Alert";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
+import Link from "@material-ui/core/Link";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -233,6 +234,11 @@ function Register() {
             }
           />
           <Button type="submit">Submit</Button>
+          <Typography>
+            <Link href="/login" onClick={e => e.preventDefault}>
+              Already have an account? Login here
+            </Link>
+          </Typography>
         </form>
       </div>
     );
