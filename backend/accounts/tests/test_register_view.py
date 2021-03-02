@@ -29,7 +29,6 @@ class RegisterUserTestCase(APITestCase):
             "email": "test@mail.com",
             "password": "testpass"
         })
-        print(response.data)
         self.assertEquals(response.data["username"], "testuser")
     
     def test_invalid_request_returns_400(self):
