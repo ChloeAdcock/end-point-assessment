@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Alert from "@material-ui/lab/Alert";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/actions/accounts/login";
@@ -27,23 +28,30 @@ function Login() {
     return <Redirect to="/map" />;
   } else {
     return (
-      <form onSubmit={handleSubmit}>
-        <Typography varient="h1">Login</Typography>
-        <Textfield
-          onChange={(e) => setUsername(e.target.value)}
-          label="Username"
-          variant="outlined"
-          required
-        />
-        <Textfield
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          label="Password"
-          variant="outlined"
-          required
-        />
-        <Button type="submit">Submit</Button>
-      </form>
+      <div>
+        {errorState && (
+          <Alert severity="error">
+            Incorrect username or password - please try again
+          </Alert>
+        )}
+        <form onSubmit={handleSubmit}>
+          <Typography varient="h1">Login</Typography>
+          <Textfield
+            onChange={(e) => setUsername(e.target.value)}
+            label="Username"
+            variant="outlined"
+            required
+          />
+          <Textfield
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            label="Password"
+            variant="outlined"
+            required
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </div>
     );
   }
 }
