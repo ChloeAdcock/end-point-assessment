@@ -44,4 +44,4 @@ class UnauthorisedListEventsTestCase(APITestCase):
     def test_unauthorised_valid_request_returns_401(self):
         response = self.client.get(self.url)
         self.assertEquals(response.status_code, status.HTTP_401_UNAUTHORIZED)
-        
+ 
