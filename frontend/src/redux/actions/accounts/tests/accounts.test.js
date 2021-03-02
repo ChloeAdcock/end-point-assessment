@@ -8,7 +8,7 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 const store = mockStore();
 
-describe("the login action creator", () => {
+describe("The login action creator", () => {
   const url = "http://127.0.0.1:8000/accounts/login/";
 
   beforeEach(() => {
@@ -22,17 +22,21 @@ describe("the login action creator", () => {
 
   it("should dispatch an action of type LOGIN_SUCCESS on successful axios request", () => {
     moxios.stubRequest(url, mocks.loginSuccess);
-    return store.dispatch(login({ username: "test", password: "test" })).then(() => {
-      const actualAction = store.getActions();
-      expect(actualAction[0].type).toEqual('LOGIN_SUCCESS');
-    });
+    return store
+      .dispatch(login({ username: "test", password: "test" }))
+      .then(() => {
+        const actualAction = store.getActions();
+        expect(actualAction[0].type).toEqual("LOGIN_SUCCESS");
+      });
   });
 
   it("should dispatch an action of type LOGIN_FAILURE on unsuccessful axios request", () => {
     moxios.stubRequest(url, mocks.loginError);
-    return store.dispatch(login({ username: "test", password: "test" })).then(() => {
-      const actualAction = store.getActions();
-      expect(actualAction[0].type).toEqual('LOGIN_FAILURE');
-    });
+    return store
+      .dispatch(login({ username: "test", password: "test" }))
+      .then(() => {
+        const actualAction = store.getActions();
+        expect(actualAction[0].type).toEqual("LOGIN_FAILURE");
+      });
   });
 });
