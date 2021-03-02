@@ -1,7 +1,7 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
-import { successLoginResponse } from "./mocks";
+import { successLoginResponse, errorLoginResponse } from "./mocks";
 import { login } from "../accounts";
 
 const middlewares = [thunk];
@@ -20,11 +20,19 @@ describe("the login action creator", () => {
     moxios.uninstall();
   });
 
-  test("should dispatch an action of type LOGIN_SUCCESS on successful axios request", () => {
+  it("should dispatch an action of type LOGIN_SUCCESS on successful axios request", () => {
     moxios.stubRequest(url, successLoginResponse);
     return store.dispatch(login({ username: "test", password: "test" })).then(() => {
       const actualAction = store.getActions();
       expect(actualAction[0].type).toEqual('LOGIN_SUCCESS');
+    });
+  });
+
+  it("should dispatch an action of type LOGIN_FAILURE on unsuccessful axios request", () => {
+    moxios.stubRequest(url, errorLoginResponse);
+    return store.dispatch(login({ username: "test", password: "test" })).then(() => {
+      const actualAction = store.getActions();
+      expect(actualAction[0].type).toEqual('LOGIN_FAILURE');
     });
   });
 });

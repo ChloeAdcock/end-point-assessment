@@ -7,3 +7,7 @@ export const successLoginResponse = {
     },
   },
 };
+
+export const errorLoginResponse = {
+  status: 400,
+};
