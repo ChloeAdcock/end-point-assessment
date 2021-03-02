@@ -27,3 +27,4 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'token', 'username', 'password', 'email')
         extra_kwargs = {'email': {'required': True}}
+        
