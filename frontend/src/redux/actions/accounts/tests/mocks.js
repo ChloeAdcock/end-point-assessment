@@ -1,4 +1,4 @@
-export const successLoginResponse = {
+const successLoginResponse = {
   status: 200,
   response: {
     data: {
@@ -8,6 +8,13 @@ export const successLoginResponse = {
   },
 };
 
-export const errorLoginResponse = {
+const errorLoginResponse = {
   status: 400,
 };
+
+const mocks = {
+  loginSuccess: successLoginResponse,
+  loginError: errorLoginResponse,
+};
+
+export default mocks;
