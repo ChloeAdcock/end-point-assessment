@@ -1,5 +1,6 @@
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from './redux/store';
+import { Route } from 'react-router-dom';
 import Login from './components/login/Login';
 import Home from './components/home/Home';
 

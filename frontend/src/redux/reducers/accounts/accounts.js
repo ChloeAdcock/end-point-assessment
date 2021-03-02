@@ -1,6 +1,7 @@
 import {
     LOGIN_SUCCESS,
-    LOGIN_FAILURE
+    LOGIN_FAILURE,
+    CLOSE_ALERT
 } from '../../actions/types';
 
 const initialState = {
@@ -22,6 +23,11 @@ function accountsReducer(state = initialState, action) {
             return ({
                 ...state,
                 loginError:true
+            });
+        case CLOSE_ALERT:
+            return ({
+                ...state,
+                loginError: false
             });
         default:
             return state;

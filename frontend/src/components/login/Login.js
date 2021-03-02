@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../redux/actions/accounts/login";
+import { login, closeAlert } from "../../redux/actions/accounts/accounts";
 
 function Login() {
   const dispatch = useDispatch();
@@ -24,13 +24,17 @@ function Login() {
     );
   };
 
+  const handleClose = () => {
+      dispatch(closeAlert());
+  }
+
   if (!errorState && user) {
     return <Redirect to="/map" />;
   } else {
     return (
       <div>
         {errorState && (
-          <Alert severity="error">
+          <Alert severity="error" onClose={handleClose}>
             Incorrect username or password - please try again
           </Alert>
         )}
