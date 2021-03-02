@@ -3,6 +3,10 @@ import Typography from "@material-ui/core/Typography";
 import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { register, closeAlert } from "../../redux/actions/accounts/accounts";
@@ -87,18 +91,18 @@ function Register() {
   };
 
   useEffect(() => {
-      if (password !== confirmPassword) {
-        setFieldError({
-          ...fieldError,
-          ...{ confirmPassword: true },
-        });
-      } else {
-        setFieldError({
-          ...fieldError,
-          ...{ confirmPassword: false },
-        });
-      }
-  }, [confirmPassword])
+    if (password !== confirmPassword) {
+      setFieldError({
+        ...fieldError,
+        ...{ confirmPassword: true },
+      });
+    } else {
+      setFieldError({
+        ...fieldError,
+        ...{ confirmPassword: false },
+      });
+    }
+  }, [confirmPassword]);
 
   const handleClose = () => {
     dispatch(closeAlert());
@@ -116,64 +120,98 @@ function Register() {
         )}
         <form onSubmit={handleSubmit}>
           <Typography varient="h1">Register</Typography>
-          <Textfield
-            label="Username"
-            value={username}
-            onBlur={() => {
-              setFieldTouched({
-                ...fieldTouched,
-                ...{ username: true },
-              });
-            }}
-            error={fieldTouched.username && fieldError.username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-              validateUsername();
-            }}
-            variant="outlined"
-            required
-            helperText={
-              fieldTouched.username && fieldError.username && "Invalid username"
-            }
-          />
+          <div>
+            <Grid container spacing={1} alignItems="flex-end">
+              <Grid item>
+                <Tooltip title="Username must be alphanumeric and 5-10 characters">
+                  <IconButton aria-label="info">
+                    <HelpOutlineIcon />
+                  </IconButton>
+                </Tooltip>
+              </Grid>
+              <Grid item>
+                <Textfield
+                  label="Username"
+                  value={username}
+                  onBlur={() => {
+                    setFieldTouched({
+                      ...fieldTouched,
+                      ...{ username: true },
+                    });
+                  }}
+                  error={fieldTouched.username && fieldError.username}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    validateUsername();
+                  }}
+                  variant="outlined"
+                  required
+                  helperText={
+                    fieldTouched.username &&
+                    fieldError.username &&
+                    "Invalid username"
+                  }
+                />
+              </Grid>
+            </Grid>
+          </div>
           <Textfield
             label="Email"
             error={fieldTouched.email && fieldError.email}
             onBlur={() => {
-                setFieldTouched({
-                  ...fieldTouched,
-                  ...{ email: true },
-                });
+              setFieldTouched({
+                ...fieldTouched,
+                ...{ email: true },
+              });
             }}
             value={email}
             variant="outlined"
             onChange={(e) => {
-                setEmail(e.target.value);
-                validateEmail();
+              setEmail(e.target.value);
+              validateEmail();
             }}
             type="email"
             required
-            helperText={fieldTouched.email && fieldError.email && "Invalid email"}
+            helperText={
+              fieldTouched.email && fieldError.email && "Invalid email"
+            }
           />
-          <Textfield
-            label="Password"
-            type="password"
-            error={fieldTouched.password && fieldError.password}
-            onBlur={() => {
-                setFieldTouched({
-                  ...fieldTouched,
-                  ...{ password: true },
-                });
-            }}
-            value={password}
-            onChange={(e) => {
-                setPassword(e.target.value);
-                validatePassword();
-            }}
-            variant="outlined"
-            required
-            helperText={fieldTouched.password && fieldError.password && "Invalid password"}
-          />
+          <div>
+            <Grid container spacing={1} alignItems="flex-end">
+              <Grid item>
+                <Tooltip title="Password must be alphanumeric, 5-10 characters and contain at least one letter and one number">
+                  <IconButton aria-label="info">
+                    <HelpOutlineIcon />
+                  </IconButton>
+                </Tooltip>
+              </Grid>
+              <Grid item>
+                <Textfield
+                  label="Password"
+                  type="password"
+                  error={fieldTouched.password && fieldError.password}
+                  onBlur={() => {
+                    setFieldTouched({
+                      ...fieldTouched,
+                      ...{ password: true },
+                    });
+                  }}
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    validatePassword();
+                  }}
+                  variant="outlined"
+                  required
+                  helperText={
+                    fieldTouched.password &&
+                    fieldError.password &&
+                    "Invalid password"
+                  }
+                />
+              </Grid>
+            </Grid>
+          </div>
           <Textfield
             label="Confirm password"
             type="password"
@@ -181,14 +219,18 @@ function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             error={fieldTouched.confirmPassword && fieldError.confirmPassword}
             onBlur={() => {
-                setFieldTouched({
-                  ...fieldTouched,
-                  ...{ confirmPassword: true },
-                });
+              setFieldTouched({
+                ...fieldTouched,
+                ...{ confirmPassword: true },
+              });
             }}
             variant="outlined"
             required
-            helperText={fieldTouched.confirmPassword && fieldError.confirmPassword && "Passwords do not match"}
+            helperText={
+              fieldTouched.confirmPassword &&
+              fieldError.confirmPassword &&
+              "Passwords do not match"
+            }
           />
           <Button type="submit">Submit</Button>
         </form>
