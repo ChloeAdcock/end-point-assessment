@@ -1,8 +1,12 @@
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from './redux/store';
+
 function App() {
   return (
-    <div className="App">
-      <p>App</p>
-    </div>
+    <ConnectedRouter history={history}>
+      <div className="App">
+      </div>
+    </ConnectedRouter>
   );
 }
 
