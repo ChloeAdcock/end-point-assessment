@@ -138,3 +138,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:3000',
 )
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'accounts.utils.my_jwt_response_handler'
+}
