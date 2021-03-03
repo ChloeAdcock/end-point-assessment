@@ -62,7 +62,6 @@ function Register() {
     }
   };
 
-  // Must not already exist in the database
   const validateUsername = () => {
     // Alphanumeric between 5 and 10 characters
     if (!username.match(/^[a-zA-Z0-9]{5,10}$/)) {
@@ -103,6 +102,7 @@ function Register() {
         ...{ confirmPassword: false },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [confirmPassword]);
 
   const handleClose = () => {
@@ -235,7 +235,7 @@ function Register() {
           />
           <Button type="submit">Submit</Button>
           <Typography>
-            <Link href="/login" onClick={e => e.preventDefault}>
+            <Link href="/login" onClick={(e) => e.preventDefault}>
               Already have an account? Login here
             </Link>
           </Typography>
