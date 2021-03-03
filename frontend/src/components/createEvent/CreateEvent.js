@@ -7,6 +7,7 @@ import { createEvent, closeAlert } from "../../redux/actions/events/events";
 import { closeAlert as closeGeocodingAlert } from "../../redux/actions/geocoding/geocoding";
 
 function CreateEvent() {
+    
   const dispatch = useDispatch();
   const createError = useSelector((state) => state.events.createError);
   const latlongError = useSelector((state) => state.geocoding.latlongError);
