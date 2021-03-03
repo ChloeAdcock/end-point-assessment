@@ -13,18 +13,17 @@ function App() {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state.accounts.currentUser);
-  const userId = useSelector(state => state.accounts.currentUserId);
 
   useEffect(() => {
     dispatch(currentUser());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ConnectedRouter history={history}>
       <div className="App">
         <Route exact path='/' component={Login} />
         <Route path='/register' component={Register} />
-        <ProtectedRoute path='/home' component={Home} user={{username: user, id: userId}}/>
+        <ProtectedRoute path='/home' component={Home} user={user}/>
       </div>
     </ConnectedRouter>
   );
