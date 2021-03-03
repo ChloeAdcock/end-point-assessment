@@ -19,19 +19,26 @@ const successRegisterResponse = {
   },
 };
 
-const errorLoginResponse = {
+const successGetUserResponse = {
+  status: 200,
+  response: {
+    data: {
+      username: "test",
+      id: 1,
+    },
+  },
+};
+
+const errorResponse = {
   status: 400,
 };
 
-const errorRegisterResponse = {
-  status: 400,
-};
 
 const mocks = {
   loginSuccess: successLoginResponse,
   registerSuccess: successRegisterResponse,
-  loginError: errorLoginResponse,
-  registerError: errorRegisterResponse,
+  getUserSuccess: successGetUserResponse,
+  error: errorResponse,
 };
 
 export default mocks;
