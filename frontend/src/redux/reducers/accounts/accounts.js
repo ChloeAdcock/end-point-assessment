@@ -46,6 +46,7 @@ function accountsReducer(state = initialState, action) {
       return {
         ...state,
         currentUser: null,
+        currentUserId: null,
         logoutError: false,
       };
     case LOGIN_FAILURE:

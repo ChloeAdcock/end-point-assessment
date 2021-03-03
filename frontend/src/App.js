@@ -8,6 +8,7 @@ import Login from './components/login/Login';
 import Home from './components/home/Home';
 import CreateEvent from './components/createEvent/CreateEvent';
 import Register from './components/register/Register';
+import Navbar from './components/navbar/Navbar';
 import { currentUser } from './redux/actions/accounts/accounts';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   return (
     <ConnectedRouter history={history}>
       <div className="App">
+        <Route path='/' component={Navbar} />
         <Route exact path='/' component={Login} />
         <Route path='/register' component={Register} />
         <ProtectedRoute path='/home' component={Home} user={user}/>
