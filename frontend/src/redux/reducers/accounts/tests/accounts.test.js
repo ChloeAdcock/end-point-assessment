@@ -15,4 +15,14 @@ describe("The accounts reducer", () => {
       mocks.loginError
     );
   });
+  it("should handle REGISTER_SUCCESS", () => {
+    expect(accountsReducer([], mocks.registerSuccessAction)).toEqual(
+      mocks.registerSuccess
+    );
+  });
+  it("should handle REGISTER_FAILURE", () => {
+    expect(accountsReducer([], mocks.registerErrorAction)).toEqual(
+      mocks.registerError
+    );
+  });
 });
