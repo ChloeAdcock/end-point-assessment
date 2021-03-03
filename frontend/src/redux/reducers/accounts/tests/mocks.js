@@ -5,6 +5,8 @@ import {
   REGISTER_SUCCESS,
   GET_USER_SUCCESS,
   GET_USER_FAILURE,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
 } from "../../../actions/types";
 
 const initialStateMock = {
@@ -13,6 +15,7 @@ const initialStateMock = {
   loginError: null,
   registerError: null,
   getUserError: null,
+  logoutError: null,
 };
 
 const loginSuccessActionMock = {
@@ -41,6 +44,10 @@ const getUserSuccessActionMock = {
   },
 };
 
+const logoutSuccessActionMock = {
+  type: LOGOUT_SUCCESS,
+};
+
 const loginSuccessMock = {
   currentUser: "test",
   currentUserId: 1,
@@ -59,6 +66,12 @@ const getUserSuccessMock = {
   getUserError: false,
 };
 
+const logoutSuccessMock = {
+  currentUser: null,
+  currentUserId: null,
+  logoutError: false,
+};
+
 const loginErrorActionMock = {
   type: LOGIN_FAILURE,
 };
@@ -69,6 +82,10 @@ const registerErrorActionMock = {
 
 const getUserErrorActionMock = {
   type: GET_USER_FAILURE,
+};
+
+const logoutErrorActionMock = {
+  type: LOGOUT_FAILURE,
 };
 
 const loginErrorMock = {
@@ -83,20 +100,28 @@ const getUserErrorMock = {
   getUserError: true,
 };
 
+const logoutErrorMock = {
+  logoutError: true,
+};
+
 const mocks = {
   initialState: initialStateMock,
   registerSuccess: registerSuccessMock,
   loginSuccess: loginSuccessMock,
   getUserSuccess: getUserSuccessMock,
+  logoutSuccess: logoutSuccessMock,
   registerError: registerErrorMock,
   loginError: loginErrorMock,
   getUserError: getUserErrorMock,
+  logoutError: logoutErrorMock,
   registerSuccessAction: registerSuccessActionMock,
   loginSuccessAction: loginSuccessActionMock,
   getUserSuccessAction: getUserSuccessActionMock,
+  logoutSuccessAction: logoutSuccessActionMock,
   registerErrorAction: registerErrorActionMock,
   loginErrorAction: loginErrorActionMock,
   getUserErrorAction: getUserErrorActionMock,
+  logoutErrorAction: logoutErrorActionMock,
 };
 
 export default mocks;
