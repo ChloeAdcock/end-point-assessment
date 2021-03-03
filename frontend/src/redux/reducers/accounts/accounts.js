@@ -74,6 +74,8 @@ function accountsReducer(state = initialState, action) {
         ...state,
         loginError: false,
         registerError: false,
+        getUserError: false,
+        logoutError: false,
       };
     default:
       return state;
