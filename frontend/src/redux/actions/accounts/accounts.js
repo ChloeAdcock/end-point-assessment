@@ -4,7 +4,9 @@ import {
   LOGIN_FAILURE, 
   REGISTER_SUCCESS,
   REGISTER_FAILURE,
-  CLOSE_ALERT 
+  CLOSE_ALERT,
+  GET_USER_FAILURE,
+  GET_USER_SUCCESS,
 } from "../types";
 
 export const login = (data) => async (dispatch) => {
@@ -22,6 +24,25 @@ export const login = (data) => async (dispatch) => {
     });
   }
 };
+
+export const currentUser = () => async (dispatch) => {
+  try {
+      const res = await axios.get('http://127.0.0.1:8000/accounts/current_user/', {
+          headers: {
+              Authorization: `JWT ${localStorage.getItem('token')}`
+          }
+      });
+      dispatch({
+          type: GET_USER_SUCCESS,
+          payload: res.data
+      });
+  } catch (err) {
+      dispatch({
+          type: GET_USER_FAILURE,
+          payload: err
+      })
+  }
+}
 
 export const register = (data) => async (dispatch) => {
   try {

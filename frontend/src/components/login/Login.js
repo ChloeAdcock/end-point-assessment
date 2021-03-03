@@ -30,7 +30,7 @@ function Login() {
   };
 
   if (!errorState && user) {
-    return <Redirect to="/map" />;
+    return <Redirect to="/home" />;
   } else {
     return (
       <div>
