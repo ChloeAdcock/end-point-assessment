@@ -1,6 +1,5 @@
 import { MemoryRouter } from "react-router-dom";
 import renderer from "react-test-renderer";
-import { render, fireEvent } from "@testing-library/react";
 import ProtectedRoute from "../ProtectedRoute";
 
 const FakeComponent = () => {

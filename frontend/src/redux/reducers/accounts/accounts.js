@@ -6,6 +6,8 @@ import {
   CLOSE_ALERT,
   GET_USER_FAILURE,
   GET_USER_SUCCESS,
+  LOGOUT_FAILURE,
+  LOGOUT_SUCCESS,
 } from "../../actions/types";
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   loginError: null,
   registerError: null,
   getUserError: null,
+  logoutError: null,
 };
 
 function accountsReducer(state = initialState, action) {
@@ -32,17 +35,29 @@ function accountsReducer(state = initialState, action) {
         currentUserId: action.payload.id,
         registerError: false,
       };
-      case GET_USER_SUCCESS:
+    case GET_USER_SUCCESS:
       return {
         ...state,
         currentUser: action.payload.username,
         currentUserId: action.payload.id,
         getUserError: false,
       };
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: null,
+        currentUserId: null,
+        logoutError: false,
+      };
     case LOGIN_FAILURE:
       return {
         ...state,
         loginError: true,
+      };
+    case LOGOUT_FAILURE:
+      return {
+        ...state,
+        logoutError: true,
       };
     case REGISTER_FAILURE:
       return {
@@ -58,7 +73,7 @@ function accountsReducer(state = initialState, action) {
       return {
         ...state,
         loginError: false,
-        registerError: false
+        registerError: false,
       };
     default:
       return state;

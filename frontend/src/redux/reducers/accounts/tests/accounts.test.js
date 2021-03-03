@@ -36,4 +36,15 @@ describe("The accounts reducer", () => {
       mocks.getUserError
     );
   });
+
+  it("should handle LOGOUT_SUCCESS", () => {
+    expect(accountsReducer([], mocks.logoutSuccessAction)).toEqual(
+      mocks.logoutSuccess
+    );
+  });
+  it("should handle LOGOUT_FAILURE", () => {
+    expect(accountsReducer([], mocks.logoutErrorAction)).toEqual(
+      mocks.logoutError
+    );
+  });
 });

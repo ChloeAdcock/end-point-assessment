@@ -2,7 +2,7 @@ import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
 import mocks from "./mocks";
-import { login, register, currentUser } from "../accounts";
+import { login, register, currentUser, logout } from "../accounts";
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -106,4 +106,27 @@ describe("The current user action creator", () => {
       });
   });
 
+});
+
+describe("The logout action creator", () => {
+
+  beforeEach(() => {
+    store.clearActions();
+  });
+
+  it("should dispatch an action of type LOGOUT_SUCCESS when the token is removed from localstorage", () => {
+    jest.spyOn(localStorage, 'removeItem');
+    store.dispatch(logout())
+    const actualAction = store.getActions();
+    expect(actualAction[0].type).toEqual("LOGOUT_SUCCESS");
+  });
+
+  it("should dispatch an action of type LOGOUT_FAILURE when an error is thrown", () => {
+    Storage.prototype.removeItem = jest.fn(() => {
+      throw new Error();
+    });
+    store.dispatch(logout())
+    const actualAction = store.getActions();
+    expect(actualAction[0].type).toEqual("LOGOUT_FAILURE");
+  });
 });
