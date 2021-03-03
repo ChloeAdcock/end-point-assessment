@@ -3,6 +3,8 @@ import { push } from "connected-react-router";
 import {
   CREATE_EVENT_FAILURE,
   CREATE_EVENT_SUCCESS,
+  VIEW_EVENTS_FAILURE,
+  VIEW_EVENTS_SUCCESS,
   CLOSE_ALERT,
 } from "../types";
 import { latLongFromAddress } from "../geocoding/geocoding";
@@ -44,6 +46,26 @@ export const createEvent = (
   } catch (err) {
     dispatch({
       type: CREATE_EVENT_FAILURE,
+      payload: err,
+    });
+  }
+};
+
+export const getEvents = () => async (dispatch) => {
+  try {
+    const options = {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem("token")}`,
+      },
+    };
+    const res = await axios.get("http://127.0.0.1:8000/events/list/", options);
+    dispatch({
+      type: VIEW_EVENTS_SUCCESS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: VIEW_EVENTS_FAILURE,
       payload: err,
     });
   }
