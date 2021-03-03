@@ -1,7 +1,6 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import renderer from "react-test-renderer";
 import { render, fireEvent } from "@testing-library/react";
 import CreateEvent from "../CreateEvent";
 
@@ -9,6 +8,47 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 describe("The create event component", () => {
+  it("should render an alert when create error is true", () => {
+    const store = mockStore({
+      events: {
+        events: null,
+        createError: true,
+      },
+      geocoding: {
+        latlongError: null,
+      },
+    });
+    const utils = render(
+      <Provider store={store}>
+        <CreateEvent />
+      </Provider>
+    );
+    expect(
+      utils.getByText("An error has occurred - please try again later")
+    ).toBeTruthy();
+  });
+
+  it("should render an alert when latlong error is true", () => {
+    const store = mockStore({
+      events: {
+        events: null,
+        createError: null,
+      },
+      geocoding: {
+        latlongError: true,
+      },
+    });
+    const utils = render(
+      <Provider store={store}>
+        <CreateEvent />
+      </Provider>
+    );
+    expect(
+      utils.getByText(
+        "Error occured finding location - please check the address"
+      )
+    ).toBeTruthy();
+  });
   it("should render an error when name fails validation", () => {
     const store = mockStore({
       events: {
@@ -16,7 +56,7 @@ describe("The create event component", () => {
         createError: null,
       },
       geocoding: {
-          latlongError: null,
+        latlongError: null,
       },
     });
     const utils = render(
@@ -37,7 +77,7 @@ describe("The create event component", () => {
         createError: null,
       },
       geocoding: {
-          latlongError: null,
+        latlongError: null,
       },
     });
     const utils = render(
@@ -58,7 +98,7 @@ describe("The create event component", () => {
         createError: null,
       },
       geocoding: {
-          latlongError: null,
+        latlongError: null,
       },
     });
     const utils = render(
