@@ -8,7 +8,7 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 describe("The login component", () => {
-  it("should render a the login form when initial state", () => {
+  it("should render the login form when initial state", () => {
     const store = mockStore({
       accounts: {
         currentUser: null,
