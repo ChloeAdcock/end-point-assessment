@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import Login from './components/login/Login';
 import Home from './components/home/Home';
+import CreateEvent from './components/createEvent/CreateEvent';
 import Register from './components/register/Register';
 import { currentUser } from './redux/actions/accounts/accounts';
 
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/' component={Login} />
         <Route path='/register' component={Register} />
         <ProtectedRoute path='/home' component={Home} user={user}/>
+        <ProtectedRoute path='/newevent' component={CreateEvent} user={user}/>
       </div>
     </ConnectedRouter>
   );

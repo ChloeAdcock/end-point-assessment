@@ -7,6 +7,8 @@ import {
   CLOSE_ALERT,
   GET_USER_FAILURE,
   GET_USER_SUCCESS,
+  LOGOUT_FAILURE,
+  LOGOUT_SUCCESS,
 } from "../types";
 
 export const login = (data) => async (dispatch) => {
@@ -55,6 +57,20 @@ export const register = (data) => async (dispatch) => {
   } catch (err) {
       dispatch({
           type: REGISTER_FAILURE,
+          payload: err
+      })
+  }
+}
+
+export const logout = () => (dispatch) => {
+  try {
+      localStorage.removeItem('token');
+      dispatch({
+          type: LOGOUT_SUCCESS
+      })
+  } catch (err) {
+      dispatch({
+          type: LOGOUT_FAILURE,
           payload: err
       })
   }
