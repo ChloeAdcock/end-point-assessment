@@ -13,10 +13,10 @@ export const latLongFromAddress = async (addLine1, city, region, postcode) => {
   try {
     const formattedAddress = `${addLine1}, ${city}, ${region}, ${postcode}`;
     const res = await Geocode.fromAddress(formattedAddress);
+    const { lat, lng } = res.results[0].geometry.location;
     store.dispatch({
       type: LATLONG_SUCCESS,
     });
-    const { lat, lng } = res.results[0].geometry.location;
     return [lat, lng];
   } catch (err) {
     store.dispatch({
