@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The navbar component should render the authenticated navbar when a user is authenticated 1`] = `
+<div>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Community Events
+      </h6>
+      <div>
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          href="/home"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Home
+          </span>
+          <span
+            className="MuiTouchRipple-root"
+          />
+        </a>
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          href="/newevent"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            New Event
+          </span>
+          <span
+            className="MuiTouchRipple-root"
+          />
+        </a>
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          href="/"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Logout
+          </span>
+          <span
+            className="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+  />
+</div>
+`;
+
+exports[`The navbar component should render the unauthenticated navbar when a user is not authenticated 1`] = `
+<div>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Community Events
+      </h6>
+      <div>
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          href="/"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Login
+          </span>
+        </a>
+        <a
+          aria-disabled={false}
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          href="/register"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Register
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+  />
+</div>
+`;
