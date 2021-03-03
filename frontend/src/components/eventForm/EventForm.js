@@ -28,6 +28,13 @@ function EventForm(props) {
         onChange={props.handleDateTimeChange}
       />
       <Textfield
+        label="Contact info"
+        value={props.contactInfo}
+        variant="outlined"
+        required
+        onChange={props.handleContactInfoChange}
+      />
+      <Textfield
         label="Address line 1"
         variant="outlined"
         required
@@ -55,7 +62,7 @@ function EventForm(props) {
         required
         onChange={props.handlePostcodeChange}
       />
-      <Button type='submit'>Submit</Button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 }

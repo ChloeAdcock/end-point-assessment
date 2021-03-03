@@ -2,7 +2,6 @@ import axios from "axios";
 import { push } from "connected-react-router";
 import { 
     CREATE_EVENT_FAILURE,
-    CREATE_EVENT_FAILURE,
     CREATE_EVENT_SUCCESS,
 } from "../types";
 import { latLongFromAddress } from '../geocoding/geocoding';
@@ -11,6 +10,7 @@ export const createEvent = (
     name,
     description,
     dateTime,
+    contactInfo,
     addLine1,
     city,
     region,
@@ -29,6 +29,7 @@ export const createEvent = (
           name: name,
           description: description,
           date_time: dateTime,
+          contact_info: contactInfo,
           latitude: Math.round(latLong[0] * Math.pow(10, 6)) / Math.pow(10, 6),
           longitude: Math.round(latLong[1] * Math.pow(10, 6)) / Math.pow(10, 6),
         },
