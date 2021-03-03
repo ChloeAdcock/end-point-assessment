@@ -17,7 +17,7 @@ function EventForm(props) {
 
   const handleNameChange = (e) => {
     props.handleNameChange(e);
-    if (!props.name.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/"]{1,100}$/)) {
+    if (!props.name.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,100}$/)) {
       setFieldError({
         ...fieldError,
         ...{ name: true },
@@ -32,7 +32,7 @@ function EventForm(props) {
 
   const handleDescriptionChange = (e) => {
     props.handleDescriptionChange(e);
-    if (!props.description.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/"]{1,500}$/)) {
+    if (!props.description.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,500}$/)) {
       setFieldError({
         ...fieldError,
         ...{ description: true },
@@ -47,7 +47,7 @@ function EventForm(props) {
 
   const handleContactInfoChange = (e) => {
     props.handleContactInfoChange(e);
-    if (!props.contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/"]{1,100}$/)) {
+    if (!props.contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,100}$/)) {
       setFieldError({
         ...fieldError,
         ...{ contactInfo: true },
@@ -61,7 +61,7 @@ function EventForm(props) {
   }
 
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={e => props.handleSubmit(fieldError, e)}>
       <Textfield
         label="Name"
         value={props.name}

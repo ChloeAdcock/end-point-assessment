@@ -7,7 +7,7 @@ import { createEvent, closeAlert } from "../../redux/actions/events/events";
 import { closeAlert as closeGeocodingAlert } from "../../redux/actions/geocoding/geocoding";
 
 function CreateEvent() {
-    
+
   const dispatch = useDispatch();
   const createError = useSelector((state) => state.events.createError);
   const latlongError = useSelector((state) => state.geocoding.latlongError);
@@ -21,21 +21,24 @@ function CreateEvent() {
   const [region, setRegion] = useState("");
   const [postcode, setPostcode] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (fieldError, e) => {
     e.preventDefault();
-    dispatch(
-      createEvent(
-        name,
-        description,
-        dateTime,
-        contactInfo,
-        addLine1,
-        city,
-        region,
-        postcode
-      )
-    );
+    if (Object.values(fieldError).indexOf(true) === -1) {
+        dispatch(
+            createEvent(
+              name,
+              description,
+              dateTime,
+              contactInfo,
+              addLine1,
+              city,
+              region,
+              postcode
+            )
+          );
+      }
   };
+  
   return (
     <div>
       {createError && latlongError !==true && (
