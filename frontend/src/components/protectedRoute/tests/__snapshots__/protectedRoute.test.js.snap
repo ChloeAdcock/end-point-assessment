@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The protected route component should render the component when a user is authenticated 1`] = `
+<p>
+  Fake component
+</p>
+`;
