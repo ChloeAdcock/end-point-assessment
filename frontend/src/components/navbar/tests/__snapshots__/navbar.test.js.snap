@@ -4,6 +4,11 @@ exports[`The navbar component should render the authenticated navbar when a user
 <div>
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+    style={
+      Object {
+        "zIndex": 1301,
+      }
+    }
   >
     <div
       className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -111,6 +116,11 @@ exports[`The navbar component should render the unauthenticated navbar when a us
 <div>
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+    style={
+      Object {
+        "zIndex": 1301,
+      }
+    }
   >
     <div
       className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"

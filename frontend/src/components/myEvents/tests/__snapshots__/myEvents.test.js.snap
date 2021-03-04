@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The my events component should render events when they are passed down as props 1`] = `
+<div
+  className="MuiDrawer-root MuiDrawer-docked"
+>
+  <div
+    className="MuiPaper-root MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
+  >
+    <ul
+      className="MuiList-root MuiList-padding"
+      style={
+        Object {
+          "marginTop": "20%",
+        }
+      }
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          NaN/NaN/NaN NaN:NaN
+        </p>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-text"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Details
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`The my events component should render no events found when there are no events 1`] = `
+<div
+  className="MuiDrawer-root MuiDrawer-docked"
+>
+  <div
+    className="MuiPaper-root MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1"
+    >
+      You don't have any events
+    </p>
+  </div>
+</div>
+`;

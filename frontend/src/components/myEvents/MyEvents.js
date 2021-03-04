@@ -7,20 +7,25 @@ import Button from "@material-ui/core/Button";
 import formatDateTime from "../../helpers/formatDateTime";
 
 function MyEvents(props) {
-
   return (
     <Drawer variant="permanent">
-      <List style={{marginTop: '20%'}}>
-        {props.events.map((event) => {
-          return (
-            <ListItem id={event.id}>
-              <Typography>{event.name}</Typography>
-              <Typography>{formatDateTime(event.date_time)}</Typography>
-              <Button onClick={() => props.handleClick(event)}>Details</Button>
-            </ListItem>
-          );
-        })}
-      </List>
+      {!props.events ? (
+        <Typography>You don't have any events</Typography>
+      ) : (
+        <List style={{ marginTop: "20%" }}>
+          {props.events.map((event) => {
+            return (
+              <ListItem id={event.id}>
+                <Typography>{event.name}</Typography>
+                <Typography>{formatDateTime(event.date_time)}</Typography>
+                <Button onClick={() => props.handleClick(event)}>
+                  Details
+                </Button>
+              </ListItem>
+            );
+          })}
+        </List>
+      )}
     </Drawer>
   );
 }
