@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The view single event component should render loading if there is nothing the event array 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1"
+>
+  Loading...
+</p>
+`;

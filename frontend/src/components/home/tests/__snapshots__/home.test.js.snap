@@ -8,14 +8,6 @@ exports[`The home component should render a loading screen when events have not 
 </p>
 `;
 
-exports[`The home component should render a loading screen when there are no events 1`] = `
-<p
-  className="MuiTypography-root MuiTypography-body1"
->
-  Loading...
-</p>
-`;
-
 exports[`The home component should render an error alert when there is an error in the state 1`] = `
 <div
   className="MuiPaper-root MuiAlert-root MuiAlert-standardError MuiPaper-elevation0"
