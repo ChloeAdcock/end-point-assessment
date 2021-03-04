@@ -22,6 +22,9 @@ describe("The home component", () => {
           events: ['test'],
           viewAllError: false,
         },
+        accounts: {
+          currentUserId: 1,
+        },
       });
       const tree = renderer
         .create(
@@ -37,6 +40,9 @@ describe("The home component", () => {
         const store = mockStore({
           events: {
             viewAllError: true,
+          },
+          accounts: {
+            currentUserId: 1,
           },
         });
         const tree = renderer
@@ -54,6 +60,9 @@ describe("The home component", () => {
           events: {
             events: [],
           },
+            accounts: {
+              currentUserId: 1,
+            },
         });
         const tree = renderer
           .create(
@@ -68,8 +77,11 @@ describe("The home component", () => {
       it("should render a loading screen when events have not loaded yet", () => {
         const store = mockStore({
             events: {
-                events: null
+                events: null,
             },
+            accounts: {
+              currentUserId: 1,
+            }
         });
         const tree = renderer
           .create(

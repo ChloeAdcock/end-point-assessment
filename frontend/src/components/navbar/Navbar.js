@@ -10,7 +10,7 @@ import { currentUser, logout } from "../../redux/actions/accounts/accounts";
 function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.accounts.currentUser);
-
+  
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{zIndex:1301}}>
         <Toolbar>
           <Typography variant="h6">
             Community Events

@@ -49,6 +49,7 @@ describe("The create event component", () => {
       )
     ).toBeTruthy();
   });
+
   it("should render an error when name fails validation", () => {
     const store = mockStore({
       events: {
