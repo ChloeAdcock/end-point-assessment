@@ -40,14 +40,12 @@ function AllEvents() {
         An error has occurred - please try again later
       </Alert>
     );
-  } else if (events === []) {
+  } else if (!events) {
+    return <Typography>Loading...</Typography>
+  }else if (events.length < 1) {
     return <Typography>No events found</Typography>;
   } else {
     return (
-      <div>
-        {!events ? (
-          <Typography>Loading...</Typography>
-        ) : (
           <MapContainer
             mapStyles={mapStyles}
             events={events}
@@ -57,8 +55,6 @@ function AllEvents() {
               lng: 1.2974,
             }}
           />
-        )}
-      </div>
     );
   }
 }
