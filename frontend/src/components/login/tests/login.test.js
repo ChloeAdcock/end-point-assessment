@@ -1,6 +1,7 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import { render, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import Login from "../Login";
 
@@ -42,5 +43,25 @@ describe("The login component", () => {
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+
+  it("should call dispatch when submit is clicked", () => {
+    const store = mockStore({
+      accounts: {
+        currentUser: null,
+        currentUserId: null,
+        loginError: null,
+      },
+    });
+    store.dispatch = jest.fn();
+    const utils = render(
+      <Provider store={store}>
+        <Login />
+      </Provider>
+    );
+    const button = utils.getByText('Submit');
+    fireEvent.click(button);
+    expect(store.dispatch).toHaveBeenCalled();
   });
 });
