@@ -34,7 +34,7 @@ function ViewSingleEvent(props) {
                 <Typography variant='body1'>For more information contact {selectedEvent.contact_info}</Typography>
                 <Typography variant='body1'>{selectedEvent.description}</Typography>
                 <Typography variant='body1'>{address}</Typography>
-                <MapContainer events={eventArray} mapStyles={mapStyles} centre={{
+                <MapContainer singleEvent events={eventArray} mapStyles={mapStyles} centre={{
                     lat: Number(selectedEvent.latitude), lng: Number(selectedEvent.longitude)
                 }} />
             </div>

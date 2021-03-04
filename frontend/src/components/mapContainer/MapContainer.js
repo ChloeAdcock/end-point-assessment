@@ -24,7 +24,7 @@ function MapContainer(props) {
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_API_KEY}>
       <GoogleMap mapContainerStyle={props.mapStyles} zoom={13} center={centre}>
-        {props.events.map((event) => {
+        {props.events && props.events.map((event) => {
           return (
             <Marker
               key={event.id}
@@ -36,7 +36,7 @@ function MapContainer(props) {
             />
           );
         })}
-        {selected.latitude && (
+        {!props.singleEvent && selected.latitude && (
           <InfoWindow
             position={{
               lat: Number(selected.latitude),

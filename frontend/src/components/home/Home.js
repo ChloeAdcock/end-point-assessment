@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router";
-import { getEvents, closeAlert } from "../../redux/actions/events/events";
 import MapContainer from "../mapContainer/MapContainer";
 import Typography from "@material-ui/core/Typography";
 import Alert from "@material-ui/lab/Alert";
+import { useHistory } from "react-router";
+import { getEvents, closeAlert } from "../../redux/actions/events/events";
+import { logout } from "../../redux/actions/accounts/accounts";;
 
 function AllEvents() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function AllEvents() {
 
   const handleClose = () => {
     dispatch(closeAlert());
+    dispatch(logout());
   };
 
   useEffect(() => {
