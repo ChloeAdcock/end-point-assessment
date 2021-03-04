@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import formatDateTime from "../../helpers/formatDateTime";
 
@@ -48,7 +47,7 @@ function MapContainer(props) {
           >
             <FormControlLabel
               style={{ backgroundColor: "white", paddingRight: "1%" }}
-              control={<Checkbox name="checkedB" color="primary" />}
+              control={<Checkbox name="checkedB" color="primary" onChange={props.handleChange} checked={props.myEvents}/>}
               label="My events"
             />
           </FormControl>

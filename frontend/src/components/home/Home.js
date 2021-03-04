@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import MapContainer from "../mapContainer/MapContainer";
 import MyEvents from '../myEvents/MyEvents';
@@ -13,10 +13,15 @@ function AllEvents() {
   const history = useHistory();
   const events = useSelector((state) => state.events.events);
   const errorState = useSelector((state) => state.events.viewAllError);
+  const [myEvents, setMyEvents] = useState(false);
 
   const mapStyles = {
     height: "92vh",
     width: "100%",
+  };
+
+  const handleChange = (event) => {
+    setMyEvents(event.target.checked);
   };
 
   const handleClick = (selected) => {
@@ -46,10 +51,13 @@ function AllEvents() {
   }else if (events.length < 1) {
     return <Typography>No events found</Typography>;
   } else {
+    console.log(myEvents);
     return (
       <div>
         <MyEvents />
           <MapContainer
+          handleChange={handleChange}
+          myEvents={myEvents}
             mapStyles={mapStyles}
             events={events}
             handleClick={handleClick}
