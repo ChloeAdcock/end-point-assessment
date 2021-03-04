@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
-import Alert from "@material-ui/lab/Alert";
 import MapContainer from "../mapContainer/MapContainer";
 import {
   addressFromLatLong,
-  closeAlert,
 } from "../../redux/actions/geocoding/geocoding";
 import formatDateTime from "../../helpers/formatDateTime";
 
