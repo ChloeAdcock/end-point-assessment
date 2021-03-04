@@ -39,6 +39,7 @@ function eventsReducer(state = initialState, action) {
       return {
         ...state,
         createError: false,
+        viewAllError: false,
       };
     default:
       return state;
