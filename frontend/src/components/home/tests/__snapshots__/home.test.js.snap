@@ -84,6 +84,8 @@ exports[`The home component should render no events found when there are no resu
 
 exports[`The home component should render the map when there are events in the state and no error 1`] = `
 <div>
-  Test
+  <div>
+    Test
+  </div>
 </div>
 `;
