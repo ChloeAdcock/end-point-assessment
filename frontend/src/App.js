@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import CreateEvent from './components/createEvent/CreateEvent';
 import Register from './components/register/Register';
 import Navbar from './components/navbar/Navbar';
+import ViewSingleEvent from './components/viewSingleEvent/ViewSingleEvent';
 import { currentUser } from './redux/actions/accounts/accounts';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/register' component={Register} />
         <ProtectedRoute path='/home' component={Home} user={user}/>
         <ProtectedRoute path='/newevent' component={CreateEvent} user={user}/>
+        <ProtectedRoute path='/eventdetails' component={ViewSingleEvent} user={user}/>
       </div>
     </ConnectedRouter>
   );
