@@ -62,7 +62,7 @@ function AllEvents() {
   } else {
     return (
       <div>
-        {myEvents && <MyEvents events={filterEvents()}/>}
+        {myEvents && <MyEvents events={filterEvents()} handleClick={handleClick}/>}
         <MapContainer
           handleChange={handleChange}
           myEvents={myEvents}

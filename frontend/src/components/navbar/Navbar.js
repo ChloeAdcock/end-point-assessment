@@ -10,7 +10,7 @@ import { currentUser, logout } from "../../redux/actions/accounts/accounts";
 function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.accounts.currentUser);
-
+  
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
