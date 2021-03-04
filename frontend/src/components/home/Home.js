@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import MapContainer from "../mapContainer/MapContainer";
+import MyEvents from '../myEvents/MyEvents';
 import Typography from "@material-ui/core/Typography";
 import Alert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router";
@@ -14,8 +15,8 @@ function AllEvents() {
   const errorState = useSelector((state) => state.events.viewAllError);
 
   const mapStyles = {
-    height: "70vh",
-    width: "80%",
+    height: "92vh",
+    width: "100%",
   };
 
   const handleClick = (selected) => {
@@ -46,6 +47,8 @@ function AllEvents() {
     return <Typography>No events found</Typography>;
   } else {
     return (
+      <div>
+        <MyEvents />
           <MapContainer
             mapStyles={mapStyles}
             events={events}
@@ -55,6 +58,7 @@ function AllEvents() {
               lng: 1.2974,
             }}
           />
+      </div>
     );
   }
 }

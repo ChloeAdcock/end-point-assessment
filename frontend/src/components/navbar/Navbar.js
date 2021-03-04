@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{zIndex:1301}}>
         <Toolbar>
           <Typography variant="h6">
             Community Events
