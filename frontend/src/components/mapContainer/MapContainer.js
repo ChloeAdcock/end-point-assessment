@@ -27,7 +27,7 @@ function MapContainer(props) {
                 {
                     props.events.map(event => {
                         return (
-                            <Marker key={event.name} position={{
+                            <Marker key={event.id} position={{
                                 lat: Number(event.latitude),
                                 lng: Number(event.longitude)
                             }} onClick={() => onSelect(event)} />
@@ -47,6 +47,7 @@ function MapContainer(props) {
                         >
                             <div>
                                 <Typography>{selected.name}</Typography>
+                                <Typography>{selected.date_time}</Typography>
                                 <Button onClick={() => props.handleClick(selected)}>Details</Button>
                             </div>
                         </InfoWindow>
