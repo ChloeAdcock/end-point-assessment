@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The view single event component should render loading if there is nothing the event array 1`] = `
-<p
-  className="MuiTypography-root MuiTypography-body1"
+<div
+  className="MuiContainer-root makeStyles-message-3 MuiContainer-maxWidthLg"
 >
-  Loading...
-</p>
+  <h5
+    className="MuiTypography-root MuiTypography-h5"
+  >
+    Loading...
+  </h5>
+  ;
+</div>
 `;

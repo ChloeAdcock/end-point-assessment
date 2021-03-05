@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The home component should render a loading screen when events have not loaded yet 1`] = `
-<p
-  className="MuiTypography-root MuiTypography-body1"
+<div
+  className="MuiContainer-root makeStyles-message-3 MuiContainer-maxWidthLg"
 >
-  Loading...
-</p>
+  <h5
+    className="MuiTypography-root MuiTypography-h5"
+  >
+    Loading...
+  </h5>
+  ;
+</div>
 `;
 
 exports[`The home component should render an error alert when there is an error in the state 1`] = `
@@ -75,11 +80,15 @@ exports[`The home component should render an error alert when there is an error 
 `;
 
 exports[`The home component should render no events found when there are no results and there is no error 1`] = `
-<p
-  className="MuiTypography-root MuiTypography-body1"
+<div
+  className="MuiContainer-root makeStyles-message-3 MuiContainer-maxWidthLg"
 >
-  No events found
-</p>
+  <h5
+    className="MuiTypography-root MuiTypography-h5"
+  >
+    No events found
+  </h5>
+</div>
 `;
 
 exports[`The home component should render the map when there are events in the state and no error 1`] = `
