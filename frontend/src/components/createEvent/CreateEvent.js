@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import Grid from '@material-ui/core/Grid';
 import Textfield from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from "react-redux";
+import Container from "@material-ui/core/Container";
 import Alert from "@material-ui/lab/Alert";
 import { createEvent, closeAlert } from "../../redux/actions/events/events";
 import { closeAlert as closeGeocodingAlert } from "../../redux/actions/geocoding/geocoding";
+import { useStyles } from "../../styles/formStyles";
 
 function CreateEvent() {
   const dispatch = useDispatch();
+  const classes= useStyles();
   const createError = useSelector((state) => state.events.createError);
   const latlongError = useSelector((state) => state.geocoding.latlongError);
 
@@ -60,7 +64,7 @@ function CreateEvent() {
   };
 
   const validateContactInfo = () => {
-    if (!contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,100}$/)) {
+    if (!contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,500}$/)) {
       setFieldError({
         ...fieldError,
         ...{ contactInfo: true },
@@ -91,6 +95,9 @@ function CreateEvent() {
     }
   };
 
+  const handleBlur = ({ target }) =>
+  setFieldTouched((prevInputs) => ({ ...prevInputs, [target.name]: true }));
+
   return (
     <div>
       {createError && latlongError !== true && (
@@ -103,12 +110,17 @@ function CreateEvent() {
           Error occured finding location - please check the address
         </Alert>
       )}
-      <Typography variant="h2">Create New Event</Typography>
+      <Container maxWidth="md" className={classes.container}>
+      <Typography variant="h4">Create New Event</Typography>
       <form onSubmit={handleSubmit}>
+        <Grid container spacing={2}>
+          <Grid container item xs={6} direction="column">
         <Textfield
+        margin="normal"
           label="Name"
+          name="name"
           value={name}
-          variant="outlined"
+          fullWidth
           required
           error={fieldTouched.name && fieldError.name}
           helperText={
@@ -118,16 +130,14 @@ function CreateEvent() {
             setName(e.target.value);
             validateName();
           }}
-          onBlur={() => {
-            setFieldTouched({
-              ...fieldTouched,
-              ...{ name: true },
-            });
-          }}
+          onBlur={handleBlur}
         />
         <Textfield
+        margin="normal"
           label="Description"
-          variant="outlined"
+          name="description"
+          fullWidth
+          rows={4}
           value={description}
           required
           multiline
@@ -141,24 +151,22 @@ function CreateEvent() {
             setDescription(e.target.value);
             validateDescription();
           }}
-          onBlur={() => {
-            setFieldTouched({
-              ...fieldTouched,
-              ...{ description: true },
-            });
-          }}
+          onBlur={handleBlur}
         />
         <Textfield
-          variant="outlined"
+        margin="normal"
+          fullWidth
           required
           type="datetime-local"
           defaultValue={dateTime.slice(0, -1)}
           onChange={(e) => setDateTime(e.target.value)}
         />
         <Textfield
+        margin="normal"
           label="Contact info"
+          name="contactInfo"
           value={contactInfo}
-          variant="outlined"
+          fullWidth
           required
           onChange={(e) => {
             setContactInfo(e.target.value);
@@ -170,43 +178,47 @@ function CreateEvent() {
             fieldError.contactInfo &&
             "Invalid contact information"
           }
-          onBlur={() => {
-            setFieldTouched({
-              ...fieldTouched,
-              ...{ contactInfo: true },
-            });
-          }}
+          onBlur={handleBlur}
         />
+        </Grid>
+        <Grid container item xs={6} direction="column">
         <Textfield
           label="Address line 1"
-          variant="outlined"
+          margin="normal"
+          fullWidth
           required
           value={addLine1}
           onChange={(e) => setAddLine1(e.target.value)}
         />
         <Textfield
           label="City"
-          variant="outlined"
+          margin="normal"
+          fullWidth
           value={city}
           required
           onChange={(e) => setCity(e.target.value)}
         />
         <Textfield
           label="Region"
-          variant="outlined"
+          margin="normal"
+          fullWidth
           value={region}
           required
           onChange={(e) => setRegion(e.target.value)}
         />
         <Textfield
           label="Postcode"
-          variant="outlined"
+          margin="normal"
+          fullWidth
           value={postcode}
           required
           onChange={(e) => setPostcode(e.target.value)}
         />
-        <Button type="submit">Submit</Button>
+        </Grid>
+        </Grid>
+        <Button type="submit" fullWidth color="primary" variant="contained" className={classes.button}>Submit</Button>
       </form>
+      </Container>
     </div>
   );
 }

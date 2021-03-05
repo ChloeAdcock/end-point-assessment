@@ -12,7 +12,7 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { register, closeAlert } from "../../redux/actions/accounts/accounts";
-import { useStyles } from "../login/loginStyles";
+import { useStyles } from "../../styles/formStyles";
 
 function Register() {
   const dispatch = useDispatch();
@@ -127,7 +127,7 @@ function Register() {
         )}
         <Container maxWidth="sm" className={classes.container}>
           <form onSubmit={handleSubmit}>
-            <Typography varient="h1" className={classes.typography}>
+            <Typography variant="h4">
               Register
             </Typography>
             <div>

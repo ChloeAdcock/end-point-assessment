@@ -9,7 +9,4 @@ export const useStyles = makeStyles({
       marginTop: '5%',
       marginBottom: '10%'
   },
-  typography: {
-      fontSize: 25,
-  }
 });

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { currentUser, logout } from "../../redux/actions/accounts/accounts";
-import { useStyles } from "./navbarStyles";
+import { useStyles } from "../../styles/navbarStyles";
 
 function Navbar() {
   const dispatch = useDispatch();

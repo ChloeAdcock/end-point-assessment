@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login, closeAlert } from "../../redux/actions/accounts/accounts";
-import { useStyles } from "./loginStyles";
+import { useStyles } from "../../styles/formStyles";
 
 function Login() {
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ function Login() {
         )}
         <Container maxWidth="sm" className={classes.container}>
           <form onSubmit={handleSubmit}>
-            <Typography varient="h1" className={classes.typography}>Login</Typography>
+            <Typography variant="h4">Login</Typography>
             <Textfield
               fullWidth
               onChange={(e) => setUsername(e.target.value)}
