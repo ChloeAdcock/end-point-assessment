@@ -65,7 +65,7 @@ function CreateEvent() {
   };
 
   const validateContactInfo = () => {
-    if (!contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{1,500}$/)) {
+    if (!contactInfo.match(/^[a-zA-Z0-9!@#$&()\\-`.+,/" ]{10,1000}$/)) {
       setFieldError({
         ...fieldError,
         ...{ contactInfo: true },
