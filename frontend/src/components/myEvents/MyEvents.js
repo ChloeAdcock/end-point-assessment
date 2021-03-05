@@ -3,10 +3,15 @@ import Drawer from "@material-ui/core/Drawer";
 import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import formatDateTime from "../../helpers/formatDateTime";
+import { useStyles } from "../../styles/drawerStyles";
 
 function MyEvents(props) {
+  const classes= useStyles();
+
   return (
     <Drawer variant="permanent">
       {!props.events ? (
@@ -15,13 +20,25 @@ function MyEvents(props) {
         <List style={{ marginTop: "20%" }}>
           {props.events.map((event) => {
             return (
-              <ListItem id={event.id}>
-                <Typography>{event.name}</Typography>
-                <Typography>{formatDateTime(event.date_time)}</Typography>
-                <Button onClick={() => props.handleClick(event)}>
-                  Details
-                </Button>
-              </ListItem>
+              <div>
+                <ListItem id={event.id} className={classes.listItem}>
+                  <ListItemText
+                    primary={<Typography variant="h6">{event.name}</Typography>}
+                    secondary={
+                      <Typography>{formatDateTime(event.date_time)}</Typography>
+                    }
+                  />
+                  <Button
+                    onClick={() => props.handleClick(event)}
+                    fullWidth
+                    color="primary"
+                    variant="contained"
+                  >
+                    Details
+                  </Button>
+                </ListItem>
+                <Divider />
+              </div>
             );
           })}
         </List>

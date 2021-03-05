@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar position="fixed" style={{zIndex:1301}}>
+      <AppBar position="fixed" className={classes.appbar}>
         <Toolbar>
           <Typography variant="h6">
             Community Events

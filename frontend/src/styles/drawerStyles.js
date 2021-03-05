@@ -1,10 +1,7 @@
 import { makeStyles } from "@material-ui/styles";
 
 export const useStyles = makeStyles({
-  navbar: {
-    marginLeft: "auto",
+  listItem: {
+    flexWrap: "wrap",
   },
-  appbar: {
-    zIndex: 1301,
-  }
 });

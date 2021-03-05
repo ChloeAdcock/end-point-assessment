@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Container from "@material-ui/core/Container";
 import Alert from "@material-ui/lab/Alert";
 import { createEvent, closeAlert } from "../../redux/actions/events/events";
+import { logout } from "../../redux/actions/accounts/accounts";
 import { closeAlert as closeGeocodingAlert } from "../../redux/actions/geocoding/geocoding";
 import { useStyles } from "../../styles/formStyles";
 
@@ -95,13 +96,18 @@ function CreateEvent() {
     }
   };
 
+  const handleClose = () => {
+    dispatch(closeAlert());
+    dispatch(logout());
+  };
+
   const handleBlur = ({ target }) =>
   setFieldTouched((prevInputs) => ({ ...prevInputs, [target.name]: true }));
 
   return (
     <div>
       {createError && latlongError !== true && (
-        <Alert severity="error" onClose={() => dispatch(closeAlert())}>
+        <Alert severity="error" onClose={handleClose}>
           An error has occurred - please try again later
         </Alert>
       )}
