@@ -7,6 +7,7 @@ import Alert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router";
 import { getEvents, closeAlert } from "../../redux/actions/events/events";
 import { logout } from "../../redux/actions/accounts/accounts";
+import getMapCentre from "../../helpers/getMapCentre";
 
 function AllEvents() {
   const dispatch = useDispatch();
@@ -69,10 +70,7 @@ function AllEvents() {
           mapStyles={mapStyles}
           events={filterEvents()}
           handleClick={handleClick}
-          centre={{
-            lat: 52.6309,
-            lng: 1.2974,
-          }}
+          centre={getMapCentre(filterEvents())}
         />
       </div>
     );

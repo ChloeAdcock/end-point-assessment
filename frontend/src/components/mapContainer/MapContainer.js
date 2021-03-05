@@ -47,7 +47,14 @@ function MapContainer(props) {
           >
             <FormControlLabel
               style={{ backgroundColor: "white", paddingRight: "1%" }}
-              control={<Checkbox name="checkedB" color="primary" onChange={props.handleChange} checked={props.myEvents}/>}
+              control={
+                <Checkbox
+                  name="checkedB"
+                  color="primary"
+                  onChange={props.handleChange}
+                  checked={props.myEvents}
+                />
+              }
               label="My events"
             />
           </FormControl>
@@ -62,9 +69,14 @@ function MapContainer(props) {
             onCloseClick={() => setSelected({})}
           >
             <div>
-              <Typography>{selected.name}</Typography>
+              <Typography variant="h6">{selected.name}</Typography>
               <Typography>{formatDateTime(selected.date_time)}</Typography>
-              <Button onClick={() => props.handleClick(selected)}>
+              <Button
+                onClick={() => props.handleClick(selected)}
+                fullWidth
+                color="primary"
+                variant="contained"
+              >
                 Details
               </Button>
             </div>

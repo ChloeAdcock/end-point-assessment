@@ -18,7 +18,9 @@ exports[`The navbar component should render the authenticated navbar when a user
       >
         Community Events
       </h6>
-      <div>
+      <div
+        className="makeStyles-navbar-1"
+      >
         <a
           aria-disabled={false}
           className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
@@ -130,7 +132,9 @@ exports[`The navbar component should render the unauthenticated navbar when a us
       >
         Community Events
       </h6>
-      <div>
+      <div
+        className="makeStyles-navbar-1"
+      >
         <a
           aria-disabled={false}
           className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"

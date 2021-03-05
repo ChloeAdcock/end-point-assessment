@@ -68,293 +68,249 @@ exports[`The login component should render an error alert when loginError is tru
       </button>
     </div>
   </div>
-  <form
-    onSubmit={[Function]}
+  <div
+    className="MuiContainer-root makeStyles-container-1 MuiContainer-maxWidthSm"
   >
-    <p
-      className="MuiTypography-root MuiTypography-body1"
-      varient="h1"
+    <form
+      onSubmit={[Function]}
     >
-      Login
-    </p>
-    <div
-      className="MuiFormControl-root MuiTextField-root"
-    >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
-        data-shrink={false}
+      <p
+        className="MuiTypography-root makeStyles-typography-3 MuiTypography-body1"
+        varient="h1"
       >
-        Username
-        <span
-          aria-hidden={true}
-          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
-        >
-           
-          *
-        </span>
-      </label>
+        Login
+      </p>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
-        onClick={[Function]}
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
-        <input
-          aria-invalid={false}
-          autoFocus={false}
-          className="MuiInputBase-input MuiOutlinedInput-input"
-          disabled={false}
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={true}
-          type="text"
-        />
-        <fieldset
-          aria-hidden={true}
-          className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+          data-shrink={false}
         >
-          <legend
-            className="PrivateNotchedOutline-legendLabelled-3"
+          Username
+          <span
+            aria-hidden={true}
+            className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
           >
-            <span>
-              Username
-               *
-            </span>
-          </legend>
-        </fieldset>
-      </div>
-    </div>
-    <div
-      className="MuiFormControl-root MuiTextField-root"
-    >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
-        data-shrink={false}
-      >
-        Password
-        <span
-          aria-hidden={true}
-          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+             
+            *
+          </span>
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
         >
-           
-          *
-        </span>
-      </label>
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+      </div>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
-        onClick={[Function]}
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
-        <input
-          aria-invalid={false}
-          autoFocus={false}
-          className="MuiInputBase-input MuiOutlinedInput-input"
-          disabled={false}
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={true}
-          type="password"
-        />
-        <fieldset
-          aria-hidden={true}
-          className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+          data-shrink={false}
         >
-          <legend
-            className="PrivateNotchedOutline-legendLabelled-3"
+          Password
+          <span
+            aria-hidden={true}
+            className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
           >
-            <span>
-              Password
-               *
-            </span>
-          </legend>
-        </fieldset>
+             
+            *
+          </span>
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
       </div>
-    </div>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-text"
-      disabled={false}
-      onBlur={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="submit"
-    >
-      <span
-        className="MuiButton-label"
-      >
-        Submit
-      </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
-    </button>
-    <p
-      className="MuiTypography-root MuiTypography-body1"
-    >
-      <a
-        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-        href="/register"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary MuiButton-fullWidth"
+        disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
+        onDragLeave={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="submit"
       >
-        Don't have an account? Register here
-      </a>
-    </p>
-  </form>
+        <span
+          className="MuiButton-label"
+        >
+          Submit
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+          href="/register"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+        >
+          Don't have an account? Register here
+        </a>
+      </p>
+    </form>
+  </div>
 </div>
 `;
 
 exports[`The login component should render the login form when initial state 1`] = `
 <div>
-  <form
-    onSubmit={[Function]}
+  <div
+    className="MuiContainer-root makeStyles-container-1 MuiContainer-maxWidthSm"
   >
-    <p
-      className="MuiTypography-root MuiTypography-body1"
-      varient="h1"
+    <form
+      onSubmit={[Function]}
     >
-      Login
-    </p>
-    <div
-      className="MuiFormControl-root MuiTextField-root"
-    >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
-        data-shrink={false}
+      <p
+        className="MuiTypography-root makeStyles-typography-3 MuiTypography-body1"
+        varient="h1"
       >
-        Username
-        <span
-          aria-hidden={true}
-          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
-        >
-           
-          *
-        </span>
-      </label>
+        Login
+      </p>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
-        onClick={[Function]}
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
-        <input
-          aria-invalid={false}
-          autoFocus={false}
-          className="MuiInputBase-input MuiOutlinedInput-input"
-          disabled={false}
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={true}
-          type="text"
-        />
-        <fieldset
-          aria-hidden={true}
-          className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+          data-shrink={false}
         >
-          <legend
-            className="PrivateNotchedOutline-legendLabelled-3"
+          Username
+          <span
+            aria-hidden={true}
+            className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
           >
-            <span>
-              Username
-               *
-            </span>
-          </legend>
-        </fieldset>
-      </div>
-    </div>
-    <div
-      className="MuiFormControl-root MuiTextField-root"
-    >
-      <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
-        data-shrink={false}
-      >
-        Password
-        <span
-          aria-hidden={true}
-          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+             
+            *
+          </span>
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
         >
-           
-          *
-        </span>
-      </label>
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+      </div>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
-        onClick={[Function]}
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
-        <input
-          aria-invalid={false}
-          autoFocus={false}
-          className="MuiInputBase-input MuiOutlinedInput-input"
-          disabled={false}
-          onAnimationStart={[Function]}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          required={true}
-          type="password"
-        />
-        <fieldset
-          aria-hidden={true}
-          className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+          data-shrink={false}
         >
-          <legend
-            className="PrivateNotchedOutline-legendLabelled-3"
+          Password
+          <span
+            aria-hidden={true}
+            className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
           >
-            <span>
-              Password
-               *
-            </span>
-          </legend>
-        </fieldset>
+             
+            *
+          </span>
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
       </div>
-    </div>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-text"
-      disabled={false}
-      onBlur={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="submit"
-    >
-      <span
-        className="MuiButton-label"
-      >
-        Submit
-      </span>
-    </button>
-    <p
-      className="MuiTypography-root MuiTypography-body1"
-    >
-      <a
-        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-        href="/register"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary MuiButton-fullWidth"
+        disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
+        onDragLeave={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="submit"
       >
-        Don't have an account? Register here
-      </a>
-    </p>
-  </form>
+        <span
+          className="MuiButton-label"
+        >
+          Submit
+        </span>
+      </button>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+          href="/register"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+        >
+          Don't have an account? Register here
+        </a>
+      </p>
+    </form>
+  </div>
 </div>
 `;

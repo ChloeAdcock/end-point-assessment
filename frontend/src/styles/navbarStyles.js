@@ -1,0 +1,10 @@
+import { makeStyles } from "@material-ui/styles";
+
+export const useStyles = makeStyles({
+  navbar: {
+    marginLeft: "auto",
+  },
+  appbar: {
+    zIndex: 1301,
+  }
+});

@@ -6,9 +6,11 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { currentUser, logout } from "../../redux/actions/accounts/accounts";
+import { useStyles } from "../../styles/navbarStyles";
 
 function Navbar() {
   const dispatch = useDispatch();
+  const classes = useStyles();
   const user = useSelector((state) => state.accounts.currentUser);
   
   useEffect(() => {
@@ -21,13 +23,13 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar position="fixed" style={{zIndex:1301}}>
+      <AppBar position="fixed" className={classes.appbar}>
         <Toolbar>
           <Typography variant="h6">
             Community Events
           </Typography>
           {user ? (
-            <div>
+            <div className={classes.navbar}>
               <Button component={Link} to="/home" color="inherit">
                 Home
               </Button>
@@ -44,11 +46,11 @@ function Navbar() {
               </Button>
             </div>
           ) : (
-            <div>
-              <Button component={Link} to="/" color="inherit">
+            <div className={classes.navbar}>
+              <Button component={Link} to="/" color="inherit" >
                 Login
               </Button>
-              <Button component={Link} to="/register" color="inherit">
+              <Button component={Link} to="/register" color="inherit" >
                 Register
               </Button>
             </div>
