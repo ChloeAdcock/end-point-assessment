@@ -102,7 +102,6 @@ describe("The register component", () => {
     expect(utils.getByText("Invalid password")).toBeTruthy();
   });
 
-
   it("should render an error when passwords don't match", () => {
     const store = mockStore({
       accounts: {
@@ -117,7 +116,8 @@ describe("The register component", () => {
       </Provider>
     );
     const input = utils.getByText("Password").nextSibling.firstChild;
-    const confirmInput = utils.getByText("Confirm password").nextSibling.firstChild;
+    const confirmInput = utils.getByText("Confirm password").nextSibling
+      .firstChild;
     fireEvent.change(input, { target: { value: "Testpass123" } });
     fireEvent.change(confirmInput, { target: { value: "Wrongpass" } });
     fireEvent.blur(confirmInput);

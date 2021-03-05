@@ -6,5 +6,5 @@ export const useStyles = makeStyles({
   },
   appbar: {
     zIndex: 1301,
-  }
+  },
 });

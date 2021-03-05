@@ -74,12 +74,11 @@ exports[`The login component should render an error alert when loginError is tru
     <form
       onSubmit={[Function]}
     >
-      <p
-        className="MuiTypography-root makeStyles-typography-3 MuiTypography-body1"
-        varient="h1"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
         Login
-      </p>
+      </h4>
       <div
         className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
@@ -200,12 +199,11 @@ exports[`The login component should render the login form when initial state 1`]
     <form
       onSubmit={[Function]}
     >
-      <p
-        className="MuiTypography-root makeStyles-typography-3 MuiTypography-body1"
-        varient="h1"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
         Login
-      </p>
+      </h4>
       <div
         className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >

@@ -7,4 +7,8 @@ export const useStyles = makeStyles({
   details: {
     marginTop: "5%",
   },
+  message: {
+    marginTop: "5%",
+    textAlign: "center",
+  },
 });

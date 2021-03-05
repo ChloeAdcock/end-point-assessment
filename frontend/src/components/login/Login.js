@@ -60,7 +60,13 @@ function Login() {
               required
               margin="normal"
             />
-            <Button type="submit" fullWidth color="primary" variant="contained" className={classes.button}>
+            <Button
+              type="submit"
+              fullWidth
+              color="primary"
+              variant="contained"
+              className={classes.button}
+            >
               Submit
             </Button>
             <Typography>

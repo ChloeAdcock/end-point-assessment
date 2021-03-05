@@ -30,7 +30,7 @@ describe("The navbar component", () => {
   it("should render the authenticated navbar when a user is authenticated", () => {
     const store = mockStore({
       accounts: {
-        currentUser: 'test',
+        currentUser: "test",
       },
     });
     const tree = renderer

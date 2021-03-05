@@ -56,7 +56,9 @@ describe("The register action creator", () => {
   it("should dispatch an action of type REGISTER_SUCCESS on successful axios request", () => {
     moxios.stubRequest(url, mocks.registerSuccess);
     return store
-      .dispatch(register({ username: "test", email: 'test@mail.com', password: "test" }))
+      .dispatch(
+        register({ username: "test", email: "test@mail.com", password: "test" })
+      )
       .then(() => {
         const actualAction = store.getActions();
         expect(actualAction[0].type).toEqual("REGISTER_SUCCESS");
@@ -66,7 +68,9 @@ describe("The register action creator", () => {
   it("should dispatch an action of type REGISTER_FAILURE on unsuccessful axios request", () => {
     moxios.stubRequest(url, mocks.error);
     return store
-      .dispatch(register({ username: "test", email: 'test@mail.com', password: "test" }))
+      .dispatch(
+        register({ username: "test", email: "test@mail.com", password: "test" })
+      )
       .then(() => {
         const actualAction = store.getActions();
         expect(actualAction[0].type).toEqual("REGISTER_FAILURE");
@@ -88,35 +92,29 @@ describe("The current user action creator", () => {
 
   it("should dispatch an action of type GET_USER_SUCCESS on successful axios request", () => {
     moxios.stubRequest(url, mocks.getUserSuccess);
-    return store
-      .dispatch(currentUser())
-      .then(() => {
-        const actualAction = store.getActions();
-        expect(actualAction[0].type).toEqual("GET_USER_SUCCESS");
-      });
+    return store.dispatch(currentUser()).then(() => {
+      const actualAction = store.getActions();
+      expect(actualAction[0].type).toEqual("GET_USER_SUCCESS");
+    });
   });
 
   it("should dispatch an action of type GET_USER_FAILURE on unsuccessful axios request", () => {
     moxios.stubRequest(url, mocks.error);
-    return store
-      .dispatch(currentUser())
-      .then(() => {
-        const actualAction = store.getActions();
-        expect(actualAction[0].type).toEqual("GET_USER_FAILURE");
-      });
+    return store.dispatch(currentUser()).then(() => {
+      const actualAction = store.getActions();
+      expect(actualAction[0].type).toEqual("GET_USER_FAILURE");
+    });
   });
-
 });
 
 describe("The logout action creator", () => {
-
   beforeEach(() => {
     store.clearActions();
   });
 
   it("should dispatch an action of type LOGOUT_SUCCESS when the token is removed from localstorage", () => {
-    jest.spyOn(localStorage, 'removeItem');
-    store.dispatch(logout())
+    jest.spyOn(localStorage, "removeItem");
+    store.dispatch(logout());
     const actualAction = store.getActions();
     expect(actualAction[0].type).toEqual("LOGOUT_SUCCESS");
   });
@@ -125,7 +123,7 @@ describe("The logout action creator", () => {
     Storage.prototype.removeItem = jest.fn(() => {
       throw new Error();
     });
-    store.dispatch(logout())
+    store.dispatch(logout());
     const actualAction = store.getActions();
     expect(actualAction[0].type).toEqual("LOGOUT_FAILURE");
   });

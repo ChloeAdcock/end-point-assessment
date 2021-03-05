@@ -20,7 +20,7 @@ describe("The login component", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-            <Login />
+          <Login />
         </Provider>
       )
       .toJSON();
@@ -38,13 +38,12 @@ describe("The login component", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-            <Login />
+          <Login />
         </Provider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
 
   it("should call dispatch when submit is clicked", () => {
     const store = mockStore({
@@ -60,7 +59,7 @@ describe("The login component", () => {
         <Login />
       </Provider>
     );
-    const button = utils.getByText('Submit');
+    const button = utils.getByText("Submit");
     fireEvent.click(button);
     expect(store.dispatch).toHaveBeenCalled();
   });

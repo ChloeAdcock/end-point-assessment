@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { currentUser, logout } from "../../redux/actions/accounts/accounts";
@@ -12,7 +12,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = useSelector((state) => state.accounts.currentUser);
-  
+
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
@@ -25,9 +25,7 @@ function Navbar() {
     <div>
       <AppBar position="fixed" className={classes.appbar}>
         <Toolbar>
-          <Typography variant="h6">
-            Community Events
-          </Typography>
+          <Typography variant="h6">Community Events</Typography>
           {user ? (
             <div className={classes.navbar}>
               <Button component={Link} to="/home" color="inherit">
@@ -47,10 +45,10 @@ function Navbar() {
             </div>
           ) : (
             <div className={classes.navbar}>
-              <Button component={Link} to="/" color="inherit" >
+              <Button component={Link} to="/" color="inherit">
                 Login
               </Button>
-              <Button component={Link} to="/register" color="inherit" >
+              <Button component={Link} to="/register" color="inherit">
                 Register
               </Button>
             </div>

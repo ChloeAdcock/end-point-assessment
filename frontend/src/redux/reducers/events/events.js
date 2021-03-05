@@ -24,7 +24,7 @@ function eventsReducer(state = initialState, action) {
         ...state,
         events: action.payload,
         viewAllError: false,
-      }
+      };
     case CREATE_EVENT_FAILURE:
       return {
         ...state,
@@ -34,7 +34,7 @@ function eventsReducer(state = initialState, action) {
       return {
         ...state,
         viewAllError: true,
-      }
+      };
     case CLOSE_ALERT:
       return {
         ...state,

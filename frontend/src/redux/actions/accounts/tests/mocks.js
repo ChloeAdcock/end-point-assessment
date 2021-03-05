@@ -33,7 +33,6 @@ const errorResponse = {
   status: 400,
 };
 
-
 const mocks = {
   loginSuccess: successLoginResponse,
   registerSuccess: successRegisterResponse,
