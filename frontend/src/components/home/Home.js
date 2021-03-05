@@ -62,7 +62,7 @@ function AllEvents() {
   } else if (!events) {
     return (
       <Container className={classes.message}>
-        <Typography variant="h5">Loading...</Typography>;
+        <Typography variant="h5">Loading...</Typography>
       </Container>
     );
   } else if (events.length < 1) {
