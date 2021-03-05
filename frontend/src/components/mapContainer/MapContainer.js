@@ -62,9 +62,9 @@ function MapContainer(props) {
             onCloseClick={() => setSelected({})}
           >
             <div>
-              <Typography>{selected.name}</Typography>
+              <Typography variant="h6">{selected.name}</Typography>
               <Typography>{formatDateTime(selected.date_time)}</Typography>
-              <Button onClick={() => props.handleClick(selected)}>
+              <Button onClick={() => props.handleClick(selected)} fullWidth color="primary" variant="contained">
                 Details
               </Button>
             </div>
