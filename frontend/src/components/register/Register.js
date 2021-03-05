@@ -5,15 +5,18 @@ import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
+import Container from "@material-ui/core/Container";
 import Tooltip from "@material-ui/core/Tooltip";
 import Link from "@material-ui/core/Link";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { register, closeAlert } from "../../redux/actions/accounts/accounts";
+import { useStyles } from "../login/loginStyles";
 
 function Register() {
   const dispatch = useDispatch();
+  const classes = useStyles();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -90,6 +93,9 @@ function Register() {
     }
   };
 
+  const handleBlur = ({ target }) =>
+    setFieldTouched((prevInputs) => ({ ...prevInputs, [target.name]: true }));
+
   useEffect(() => {
     if (password !== confirmPassword) {
       setFieldError({
@@ -119,127 +125,127 @@ function Register() {
             An error has occurred - please try again later
           </Alert>
         )}
-        <form onSubmit={handleSubmit}>
-          <Typography varient="h1">Register</Typography>
-          <div>
-            <Grid container spacing={1} alignItems="flex-end">
-              <Grid item>
-                <Tooltip title="Username must be alphanumeric and 5-10 characters">
-                  <IconButton aria-label="info">
-                    <HelpOutlineIcon />
-                  </IconButton>
-                </Tooltip>
+        <Container maxWidth="sm" className={classes.container}>
+          <form onSubmit={handleSubmit}>
+            <Typography varient="h1" className={classes.typography}>
+              Register
+            </Typography>
+            <div>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item xs={1}>
+                  <Tooltip title="Username must be alphanumeric and 5-10 characters">
+                    <IconButton aria-label="info">
+                      <HelpOutlineIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+                <Grid item xs={11}>
+                  <Textfield
+                    margin="normal"
+                    name="username"
+                    fullWidth
+                    label="Username"
+                    value={username}
+                    onBlur={handleBlur}
+                    error={fieldTouched.username && fieldError.username}
+                    onChange={(e) => {
+                      setUsername(e.target.value);
+                      validateUsername();
+                    }}
+                    required
+                    helperText={
+                      fieldTouched.username &&
+                      fieldError.username &&
+                      "Invalid username"
+                    }
+                  />
+                </Grid>
               </Grid>
-              <Grid item>
-                <Textfield
-                  label="Username"
-                  value={username}
-                  onBlur={() => {
-                    setFieldTouched({
-                      ...fieldTouched,
-                      ...{ username: true },
-                    });
-                  }}
-                  error={fieldTouched.username && fieldError.username}
-                  onChange={(e) => {
-                    setUsername(e.target.value);
-                    validateUsername();
-                  }}
-                  variant="outlined"
-                  required
-                  helperText={
-                    fieldTouched.username &&
-                    fieldError.username &&
-                    "Invalid username"
-                  }
-                />
+            </div>
+            <Textfield
+              label="Email"
+              margin="normal"
+              name="email"
+              fullWidth
+              error={fieldTouched.email && fieldError.email}
+              onBlur={handleBlur}
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                validateEmail();
+              }}
+              type="email"
+              required
+              helperText={
+                fieldTouched.email && fieldError.email && "Invalid email"
+              }
+            />
+            <div>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item xs={1}>
+                  <Tooltip title="Password must be alphanumeric, 5-10 characters and contain at least one letter and one number">
+                    <IconButton aria-label="info">
+                      <HelpOutlineIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+                <Grid item xs={11}>
+                  <Textfield
+                    label="Password"
+                    type="password"
+                    name="password"
+                    margin="normal"
+                    fullWidth
+                    error={fieldTouched.password && fieldError.password}
+                    onBlur={handleBlur}
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      validatePassword();
+                    }}
+                    required
+                    helperText={
+                      fieldTouched.password &&
+                      fieldError.password &&
+                      "Invalid password"
+                    }
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-          </div>
-          <Textfield
-            label="Email"
-            error={fieldTouched.email && fieldError.email}
-            onBlur={() => {
-              setFieldTouched({
-                ...fieldTouched,
-                ...{ email: true },
-              });
-            }}
-            value={email}
-            variant="outlined"
-            onChange={(e) => {
-              setEmail(e.target.value);
-              validateEmail();
-            }}
-            type="email"
-            required
-            helperText={
-              fieldTouched.email && fieldError.email && "Invalid email"
-            }
-          />
-          <div>
-            <Grid container spacing={1} alignItems="flex-end">
-              <Grid item>
-                <Tooltip title="Password must be alphanumeric, 5-10 characters and contain at least one letter and one number">
-                  <IconButton aria-label="info">
-                    <HelpOutlineIcon />
-                  </IconButton>
-                </Tooltip>
-              </Grid>
-              <Grid item>
-                <Textfield
-                  label="Password"
-                  type="password"
-                  error={fieldTouched.password && fieldError.password}
-                  onBlur={() => {
-                    setFieldTouched({
-                      ...fieldTouched,
-                      ...{ password: true },
-                    });
-                  }}
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                    validatePassword();
-                  }}
-                  variant="outlined"
-                  required
-                  helperText={
-                    fieldTouched.password &&
-                    fieldError.password &&
-                    "Invalid password"
-                  }
-                />
-              </Grid>
-            </Grid>
-          </div>
-          <Textfield
-            label="Confirm password"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            error={fieldTouched.confirmPassword && fieldError.confirmPassword}
-            onBlur={() => {
-              setFieldTouched({
-                ...fieldTouched,
-                ...{ confirmPassword: true },
-              });
-            }}
-            variant="outlined"
-            required
-            helperText={
-              fieldTouched.confirmPassword &&
-              fieldError.confirmPassword &&
-              "Passwords do not match"
-            }
-          />
-          <Button type="submit">Submit</Button>
-          <Typography>
-            <Link href="/login" onClick={(e) => e.preventDefault}>
-              Already have an account? Login here
-            </Link>
-          </Typography>
-        </form>
+            </div>
+            <Textfield
+              label="Confirm password"
+              fullWidth
+              type="password"
+              name="confirmPassword"
+              margin="normal"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              error={fieldTouched.confirmPassword && fieldError.confirmPassword}
+              onBlur={handleBlur}
+              required
+              helperText={
+                fieldTouched.confirmPassword &&
+                fieldError.confirmPassword &&
+                "Passwords do not match"
+              }
+            />
+            <Button
+              type="submit"
+              fullWidth
+              color="primary"
+              variant="contained"
+              className={classes.button}
+            >
+              Submit
+            </Button>
+            <Typography>
+              <Link href="/" onClick={(e) => e.preventDefault}>
+                Already have an account? Login here
+              </Link>
+            </Typography>
+          </form>
+        </Container>
       </div>
     );
   }
