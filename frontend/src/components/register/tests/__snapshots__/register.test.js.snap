@@ -69,17 +69,16 @@ exports[`The register component should render an error alert when registerError 
     </div>
   </div>
   <div
-    className="MuiContainer-root MuiContainer-maxWidthSm"
+    className="MuiContainer-root makeStyles-container-1 MuiContainer-maxWidthSm"
   >
     <form
       onSubmit={[Function]}
     >
-      <p
-        className="MuiTypography-root MuiTypography-body1"
-        varient="h1"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
         Register
-      </p>
+      </h4>
       <div>
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-flex-end"
@@ -131,7 +130,7 @@ exports[`The register component should render an error alert when registerError 
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
             >
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -155,6 +154,7 @@ exports[`The register component should render an error alert when registerError 
                   autoFocus={false}
                   className="MuiInputBase-input MuiInput-input"
                   disabled={false}
+                  name="username"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -169,7 +169,7 @@ exports[`The register component should render an error alert when registerError 
         </div>
       </div>
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
         <label
           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -193,6 +193,7 @@ exports[`The register component should render an error alert when registerError 
             autoFocus={false}
             className="MuiInputBase-input MuiInput-input"
             disabled={false}
+            name="email"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -254,7 +255,7 @@ exports[`The register component should render an error alert when registerError 
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
             >
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -278,6 +279,7 @@ exports[`The register component should render an error alert when registerError 
                   autoFocus={false}
                   className="MuiInputBase-input MuiInput-input"
                   disabled={false}
+                  name="password"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -292,7 +294,7 @@ exports[`The register component should render an error alert when registerError 
         </div>
       </div>
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
         <label
           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -316,6 +318,7 @@ exports[`The register component should render an error alert when registerError 
             autoFocus={false}
             className="MuiInputBase-input MuiInput-input"
             disabled={false}
+            name="confirmPassword"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -327,7 +330,7 @@ exports[`The register component should render an error alert when registerError 
         </div>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-fullWidth"
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary MuiButton-fullWidth"
         disabled={false}
         onBlur={[Function]}
         onDragLeave={[Function]}
@@ -357,7 +360,7 @@ exports[`The register component should render an error alert when registerError 
       >
         <a
           className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-          href="/login"
+          href="/"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -373,17 +376,16 @@ exports[`The register component should render an error alert when registerError 
 exports[`The register component should render the register form when initial state 1`] = `
 <div>
   <div
-    className="MuiContainer-root MuiContainer-maxWidthSm"
+    className="MuiContainer-root makeStyles-container-1 MuiContainer-maxWidthSm"
   >
     <form
       onSubmit={[Function]}
     >
-      <p
-        className="MuiTypography-root MuiTypography-body1"
-        varient="h1"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
         Register
-      </p>
+      </h4>
       <div>
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-flex-end"
@@ -435,7 +437,7 @@ exports[`The register component should render the register form when initial sta
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
             >
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -459,6 +461,7 @@ exports[`The register component should render the register form when initial sta
                   autoFocus={false}
                   className="MuiInputBase-input MuiInput-input"
                   disabled={false}
+                  name="username"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -473,7 +476,7 @@ exports[`The register component should render the register form when initial sta
         </div>
       </div>
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
         <label
           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -497,6 +500,7 @@ exports[`The register component should render the register form when initial sta
             autoFocus={false}
             className="MuiInputBase-input MuiInput-input"
             disabled={false}
+            name="email"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -558,7 +562,7 @@ exports[`The register component should render the register form when initial sta
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
             >
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -582,6 +586,7 @@ exports[`The register component should render the register form when initial sta
                   autoFocus={false}
                   className="MuiInputBase-input MuiInput-input"
                   disabled={false}
+                  name="password"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -596,7 +601,7 @@ exports[`The register component should render the register form when initial sta
         </div>
       </div>
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
         <label
           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -620,6 +625,7 @@ exports[`The register component should render the register form when initial sta
             autoFocus={false}
             className="MuiInputBase-input MuiInput-input"
             disabled={false}
+            name="confirmPassword"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -631,7 +637,7 @@ exports[`The register component should render the register form when initial sta
         </div>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-fullWidth"
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary MuiButton-fullWidth"
         disabled={false}
         onBlur={[Function]}
         onDragLeave={[Function]}
@@ -661,7 +667,7 @@ exports[`The register component should render the register form when initial sta
       >
         <a
           className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-          href="/login"
+          href="/"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
