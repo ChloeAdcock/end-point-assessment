@@ -20,8 +20,8 @@ function MyEvents(props) {
         <List style={{ marginTop: "20%" }}>
           {props.events.map((event) => {
             return (
-              <div>
-                <ListItem id={event.id} className={classes.listItem}>
+              <div id={event.id}>
+                <ListItem className={classes.listItem}>
                   <ListItemText
                     primary={<Typography variant="h6">{event.name}</Typography>}
                     secondary={
