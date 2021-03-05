@@ -1,10 +1,6 @@
 import Geocode from "react-geocode";
 import store from "../../store";
-import { 
-  LATLONG_FAILURE, 
-  CLOSE_ALERT,
-  LATLONG_SUCCESS,
-} from "../types";
+import { LATLONG_FAILURE, CLOSE_ALERT, LATLONG_SUCCESS } from "../types";
 
 Geocode.setLocationType("ROOFTOP");
 Geocode.setApiKey(process.env.REACT_APP_API_KEY);
@@ -14,9 +10,9 @@ export const addressFromLatLong = async (latitude, longitude) => {
     const res = await Geocode.fromLatLng(latitude, longitude);
     return res.results[0].formatted_address;
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 
 export const latLongFromAddress = async (addLine1, city, region, postcode) => {
   try {

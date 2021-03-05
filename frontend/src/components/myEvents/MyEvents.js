@@ -10,7 +10,7 @@ import formatDateTime from "../../helpers/formatDateTime";
 import { useStyles } from "../../styles/drawerStyles";
 
 function MyEvents(props) {
-  const classes= useStyles();
+  const classes = useStyles();
 
   return (
     <Drawer variant="permanent">

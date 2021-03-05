@@ -9,6 +9,6 @@ export const useStyles = makeStyles({
   },
   message: {
     marginTop: "5%",
-    textAlign: 'center',
-  }
+    textAlign: "center",
+  },
 });

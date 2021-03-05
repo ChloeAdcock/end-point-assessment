@@ -127,9 +127,7 @@ function Register() {
         )}
         <Container maxWidth="sm" className={classes.container}>
           <form onSubmit={handleSubmit}>
-            <Typography variant="h4">
-              Register
-            </Typography>
+            <Typography variant="h4">Register</Typography>
             <div>
               <Grid container spacing={1} alignItems="flex-end">
                 <Grid item xs={1}>
